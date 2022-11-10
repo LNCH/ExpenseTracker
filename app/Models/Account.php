@@ -24,6 +24,14 @@ class Account extends Model
     ];
 
     /**
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
+
+    /**
      * @return BelongsTo
      */
     public function owner(): BelongsTo

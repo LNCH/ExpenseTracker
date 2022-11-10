@@ -18,20 +18,22 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Create initial login account
-        User::factory()->create([
+        $coreUser = User::factory()->create([
             'first_name' => 'Tom',
             'last_name' => 'Lynch',
             'email' => 'tom@lnch.co.uk',
             'password' => Hash::make('password'),
         ]);
 
-         $users = User::factory(10)->create();
+        Account::factory()->count(10)->for($coreUser, 'owner')->create();
 
-         foreach ($users as $user) {
+        $users = User::factory(10)->create();
+
+        foreach ($users as $user) {
              Account::factory()
                  ->count(random_int(3, 5))
                  ->for($user, 'owner')
                  ->create();
-         }
+        }
     }
 }

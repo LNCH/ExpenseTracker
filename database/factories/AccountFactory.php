@@ -25,7 +25,7 @@ class AccountFactory extends Factory
 
         return [
             'uuid' => fake()->uuid(),
-            'name' => fake()->words(3, true),
+            'name' => ucwords(fake()->words(3, true)),
             'type' => $type,
             'opening_balance' => random_int($availableOverdraft ? $availableOverdraft * -1 : 0, 10_000),
             'overdraft_available' => $availableOverdraft,
