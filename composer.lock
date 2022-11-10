@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa97cc08e2a95841a895db12a6f4cf09",
+    "content-hash": "03d6d93ac4dbb332f2acde0cbd6cc7c4",
     "packages": [
         {
             "name": "brick/math",
@@ -1610,6 +1610,45 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
+        },
+        {
+            "name": "lnch/laravel-toolkit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LNCH/LaravelToolkit.git",
+                "reference": "a8094bff9a6337b5102f1fd861faf14a711d8c89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LNCH/LaravelToolkit/zipball/a8094bff9a6337b5102f1fd861faf14a711d8c89",
+                "reference": "a8094bff9a6337b5102f1fd861faf14a711d8c89",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.1",
+                "phpunit/phpunit": "^8.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lnch\\LaravelToolkit\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Tom Lynch",
+                    "email": "tom@lnch.co.uk"
+                }
+            ],
+            "description": "A group of classes and utility functions to aid in Laravel application development",
+            "support": {
+                "issues": "https://github.com/LNCH/LaravelToolkit/issues",
+                "source": "https://github.com/LNCH/LaravelToolkit/tree/master"
+            },
+            "time": "2022-11-10T22:07:17+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7874,7 +7913,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "lnch/laravel-toolkit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
