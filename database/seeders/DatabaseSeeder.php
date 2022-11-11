@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Account;
+use App\Models\Transaction;
+use App\Models\TransactionCategory;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -35,5 +37,15 @@ class DatabaseSeeder extends Seeder
                  ->for($user, 'owner')
                  ->create();
         }
+
+        $transactionCategories = TransactionCategory::factory()
+            ->count(20)
+            ->create();
+
+        collect($transactionCategories)->each(function ($category) {
+            Transaction::factory()
+                ->count(200)
+                ->create(['category_id' => $category->id]);
+        });
     }
 }

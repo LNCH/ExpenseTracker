@@ -49,6 +49,8 @@ class AccountsController extends Controller
      */
     public function show(Account $account): Renderable
     {
+        $account->bindCircularTransactionRelations();
+
         return view('accounts.show', compact('account'));
     }
 
