@@ -19,7 +19,7 @@ class AccountFactory extends Factory
     {
         $type = fake()->randomElement(AccountType::cases());
 
-        $availableOverdraft = $type === AccountType::CURRENT
+        $availableOverdraft = $type === AccountType::CURRENT_ACCOUNT
             ? random_int(1, 10) * 100
             : null;
 

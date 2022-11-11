@@ -6,29 +6,15 @@
     </x-slot>
 
     <div class="py-12">
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <x-account.statistics :account="$account"></x-account.statistics>
+
+            <h2 class="text-lg font-medium leading-6 text-gray-900 mt-6">Transactions</h2>
+
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 bg-white border-b border-gray-200">
-
-                    <ul>
-                        <li>
-                            <strong>Type:</strong> {{ $account->type }}
-                        </li>
-                        <li>
-                            <strong>Opening Balance:</strong> {{ $account->opening_balance }}
-                        </li>
-                        @if ($account->type == 'credit')
-                            <li>
-                                <strong>Credit Limit:</strong> {{ $account->credit_limit }}
-                            </li>
-                        @endif
-                        @if ($account->type == 'current')
-                            <li>
-                                <strong>Overdraft Available:</strong> {{ $account->overdraft_available }}
-                            </li>
-                        @endif
-                    </ul>
-
+                    Transactions...
                 </div>
             </div>
         </div>
