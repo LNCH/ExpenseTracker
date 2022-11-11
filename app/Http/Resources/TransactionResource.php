@@ -19,7 +19,7 @@ class TransactionResource extends JsonResource
             'uuid' => $this->uuid,
             'type' => $this->type,
             'date' => $this->date,
-            'formatted_date' => $this->date->format('d/m/Y H:i'),
+            'formatted_date' => $this->date->format('jS F Y'),
             'amount' => $this->amount->amount(),
             'current_balance' => $this->account->getBalanceForDate($this->date),
         ];
