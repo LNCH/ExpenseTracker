@@ -33,9 +33,3 @@ const Transactions = (props) => {
 }
 
 export default Transactions;
-
-const rootElement = document.getElementById('account-transactions');
-
-if (rootElement) {
-    createRoot(rootElement).render(<Transactions accountId={rootElement.dataset.accountId} />)
-}

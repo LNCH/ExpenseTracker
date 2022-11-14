@@ -1,1 +1,1 @@
-import './Account/Transactions'
+import './Pages/AccountTransactions'

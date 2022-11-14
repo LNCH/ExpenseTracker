@@ -28,7 +28,7 @@ const PaginationItem = ({children, onClick, active}) => {
     )
 }
 
-PaginationItem.PropTypes = {
+PaginationItem.propTypes = {
     active: PropTypes.bool
 }
 
