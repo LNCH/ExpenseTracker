@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Enums\TransactionType;
 use App\Models\Account;
+use App\Models\Payee;
 use App\Models\TransactionCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -24,6 +25,7 @@ class TransactionFactory extends Factory
             'uuid' => Str::uuid(),
             'type' => fake()->randomElement(TransactionType::cases()),
             'account_id' => Account::query()->inRandomOrder()->first()->id,
+            'payee_id' => Payee::query()->inRandomOrder()->first()->id,
             'date' => fake()->date(),
             'amount' => random_int(100, 20_000),
             'category_id' => TransactionCategory::query()->inRandomOrder()->first()->id,

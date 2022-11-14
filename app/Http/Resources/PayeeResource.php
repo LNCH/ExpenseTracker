@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TransactionResource extends JsonResource
+class PayeeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,12 +17,7 @@ class TransactionResource extends JsonResource
         return [
             'id' => $this->id,
             'uuid' => $this->uuid,
-            'type' => $this->type,
-            'date' => $this->date,
-            'formatted_date' => $this->date->format('jS F Y'),
-            'amount' => $this->amount->amount(),
-            'current_balance' => $this->account->getBalanceForDate($this->date),
-            'payee' => new PayeeResource($this->payee),
+            'name' => $this->name,
         ];
     }
 }

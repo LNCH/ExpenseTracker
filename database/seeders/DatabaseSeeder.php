@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Account;
+use App\Models\Payee;
 use App\Models\Transaction;
 use App\Models\TransactionCategory;
 use App\Models\User;
@@ -38,6 +39,10 @@ class DatabaseSeeder extends Seeder
                  ->create();
         }
 
+        Payee::factory()
+            ->count(20)
+            ->create();
+
         $transactionCategories = TransactionCategory::factory()
             ->count(20)
             ->create();
@@ -45,7 +50,7 @@ class DatabaseSeeder extends Seeder
         collect($transactionCategories)->each(function ($category) {
             Transaction::factory()
                 ->count(200)
-                ->create(['category_id' => $category->id]);
+                ->create(['category_id' => $category->id]);#
         });
     }
 }

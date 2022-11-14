@@ -16,6 +16,7 @@ class Transaction extends Model
     protected $fillable = [
         'type',
         'account_id',
+        'payee_id',
         'date',
         'amount',
         'category_id',
@@ -31,11 +32,23 @@ class Transaction extends Model
         'amount' => MoneyIntegerCast::class,
     ];
 
+    protected $with = [
+        'payee',
+    ];
+
     /**
      * @return BelongsTo
      */
     public function account(): BelongsTo
     {
         return $this->belongsTo(Account::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function payee(): BelongsTo
+    {
+        return $this->belongsTo(Payee::class);
     }
 }
