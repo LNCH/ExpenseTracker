@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import PrimaryButton from "./Buttons/PrimaryButton";
 
 const Modal = (props) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
     // Prevent body scrolling when open
     useEffect(() => {

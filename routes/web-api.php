@@ -21,3 +21,6 @@ Route::get('ping', function () {
 
 Route::get('account/{account}/transactions', [TransactionsController::class, 'index'])
     ->name('account.transactions.index');
+
+Route::post('account/{account}/transactions', [TransactionsController::class, 'store'])
+    ->name('account.transactions.store');

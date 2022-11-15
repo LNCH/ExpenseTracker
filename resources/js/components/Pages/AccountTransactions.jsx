@@ -2,8 +2,7 @@ import React from 'react'
 import {createRoot} from "react-dom/client";
 import Transactions from "../Account/Transactions";
 import Panel from "../Panel";
-import Modal from "../Modal";
-import PlusSquaresIcon from "../Icons/PlusSquaresIcon";
+import TransactionModal from "../Account/TransactionModal";
 
 const AccountTransactions = ({ accountId }) => {
     return (
@@ -14,16 +13,10 @@ const AccountTransactions = ({ accountId }) => {
                 </h2>
 
                 <div>
-                    <Modal
-                        renderHeader="New Transaction"
-                        renderTrigger={() => (
-                            <span className="flex items-center gap-x-1">
-                                <PlusSquaresIcon /> New Transaction
-                            </span>
-                        )}
-                    >
-                        Modal content here
-                    </Modal>
+                    <TransactionModal
+                        accountId={accountId}
+                        onSubmit={() => console.log()}
+                    />
                 </div>
             </div>
 

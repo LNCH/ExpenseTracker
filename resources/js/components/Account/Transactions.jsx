@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import {createRoot} from "react-dom/client";
+import React, {useState} from 'react'
 import useAccountTransactions from "../../hooks/Transactions/useAccountTransactions";
 import TransactionsList from "./TransactionsList";
 import Pagination from "../Pagination/Pagination";

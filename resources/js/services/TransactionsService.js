@@ -5,6 +5,10 @@ const TransactionsService = {
                 page: page
             }
         });
+    },
+
+    createTransaction: async (accountId, data) => {
+        return await axios.post(route('web-api.account.transactions.store', accountId), data)
     }
 }
 
